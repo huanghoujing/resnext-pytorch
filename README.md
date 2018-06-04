@@ -23,7 +23,7 @@ To check the correctness of conversion, I refer to another repository <https://g
 
 # Misc
 
-When indexing the model loaded by `torch.utils.serialization.load_lua`, I found a minor mismatch between the definition of [`resnext.lua`](https://github.com/facebookresearch/ResNeXt/blob/3cf474fdffa9ba4ce11ad41c0278e38fcd47372f/models/resnext.lua) and the torch checkpoint. The difference is in `resnext_bottleneck_C`, whether to wrap the first two conv layers in an extra `nn.Sequential()`. I provide a new lua file that is consistent with the torch checkpoint. The [original](https://github.com/facebookresearch/ResNeXt/blob/3cf474fdffa9ba4ce11ad41c0278e38fcd47372f/models/resnext.lua#L108) and the [modified]() `resnext_bottleneck_C` definition.
+When indexing the model loaded by `torch.utils.serialization.load_lua`, I found a minor mismatch between the definition of [`resnext.lua`](https://github.com/facebookresearch/ResNeXt/blob/3cf474fdffa9ba4ce11ad41c0278e38fcd47372f/models/resnext.lua) and the torch checkpoint. The difference is in `resnext_bottleneck_C`, whether to wrap the first two conv layers in an extra `nn.Sequential()`. I provide a new lua file that is consistent with the torch checkpoint. The [original](https://github.com/facebookresearch/ResNeXt/blob/3cf474fdffa9ba4ce11ad41c0278e38fcd47372f/models/resnext.lua#L108) and the [modified](https://github.com/huanghoujing/resnext-pytorch/blob/master/resnext-consistent-with-provided-resnext-50-32x4d-t7-checkpoint.lua#L113) `resnext_bottleneck_C` definition.
 
 # Reference
 
